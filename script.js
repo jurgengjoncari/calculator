@@ -3,19 +3,46 @@ function substract(x, y) {return x - y;}
 function multiply(x, y) {return x * y;}
 function divide(x, y) {return x / y;}
 
-function operate(x, operator, y) {return operator(x, y);}
-function display(v) {
-	output = document.querySelector("#output");
-	if (
+function operate(x, operator, y) {operator(x, y);}
 
-let x = document.querySelector();
-let buttons = document.querySelectorAll("button");
-var value;
-buttons.forEach(button, function () {
+var input = 0;
+
+var x = new String;
+var operator = undefined;
+var y = new String;
+
+var buttons = document.querySelectorAll("button");
+
+var outputDisplay = document.querySelector("#output");
+
+var operators = Array.from(document.querySelectorAll(".operator")).map((btn) => btn.id);
+console.log(operators);
+function display(input) {
+	if (outputDisplay.textContent == "0") {
+		outputDisplay.textContent = "";
+	}
+	if (input != "equals") {
+		outputDisplay.textContent += input;
+		if (operators.includes(input)) {
+			operator = input;
+			console.log(operator);
+		} else {
+			if (operator == undefined) {
+				x.concat(input);
+			} else {
+				y.concat(input);
+			}
+		}
+	} else {
+		console.log(operator);
+		outputDisplay.textContent = operate(Number(x), operator, Number(y));
+	}
+}
+
+buttons.forEach(function (button) {
 	button.addEventListener("click", function () {
-		value = button.id;
-		display(value);
+		input = button.id;
+		display(input);
 	})
 });
 
-display(value);
