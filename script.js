@@ -25,25 +25,26 @@ function display(button) {
 		x = "0";
 		y = "";
 		operator = "";
-	}
-	if (button.id != "equals") {
-		outputDisplay.textContent += button.textContent;
-		if (operators.includes(button.id)) {
-			operator = button.id;
-			console.log(operator);
-		} else {
-			if (operator == "") {
-				x = x.concat(button.textContent);
-			} else {
-				y = y.concat(button.textContent);
-			}
-		}
 	} else {
-		result = operate(Number(x), operator, Number(y))
-		outputDisplay.textContent = result;
-		x = result;
-		y = "";
-		operator = "";
+		if (button.id != "equals") {
+			outputDisplay.textContent += button.textContent;
+			if (operators.includes(button.id)) {
+				operator = button.id;
+				console.log(operator);
+			} else {
+				if (operator == "") {
+					x = x.concat(button.textContent);
+				} else {
+					y = y.concat(button.textContent);
+				}
+			}
+		} else {
+			result = operate(Number(x), operator, Number(y))
+			outputDisplay.textContent = result;
+			x = result;
+			y = "";
+			operator = "";
+		}
 	}
 }
 
