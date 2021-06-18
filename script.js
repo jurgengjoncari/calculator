@@ -4,7 +4,6 @@ function multiply(x, y) {return x * y;}
 function divide(x, y) {return x / y;}
 
 function operate(x, operator, y) {
-	console.log(window[operator]);
 	return window[operator](x, y);
 }
 
@@ -30,7 +29,6 @@ function display(button) {
 			outputDisplay.textContent += button.textContent;
 			if (operators.includes(button.id)) {
 				operator = button.id;
-				console.log(operator);
 			} else {
 				if (operator == "") {
 					x = x.concat(button.textContent);
