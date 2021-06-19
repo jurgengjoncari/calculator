@@ -3,7 +3,8 @@ There's a display and there's a numpad
 1. x -> 0
 1. y -> ""
 1. operator -> ""
-1. the display shows x;
+1. dot -> false
+1. the display shows x
 1. the user clicks a button
 	- it is a digit
 		- has the operator been clicked yet?
@@ -17,6 +18,16 @@ There's a display and there's a numpad
 				: add the digit to the end of y	
 	- it is an operator
 		1. operator -> button
+		1. has the operator been pressed before?
+			- no
+				: add it to the end
+			- yes
+				- has a number been pressed after it?
+					- no
+						: replace the last char
+					- yes
+						1. call operate function
+						1. add the operator to the end of result
 	- it is the "=" sign
 		1. call the operator function
 		1. display the result
@@ -28,3 +39,6 @@ There's a display and there's a numpad
 		1. x -> "0"
 		1. y -> ""
 		1. operator -> ""
+	- it is the "."
+		: if the "." not been pressed before
+			: add it

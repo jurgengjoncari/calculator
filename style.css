@@ -9,14 +9,12 @@
 button {
     height: 60px;
     width: 60px;
+    margin: 6px;
 }
 
 * {
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.display {
 }
 
 html, body {
