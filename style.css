@@ -2,8 +2,9 @@
     height: 100%;
     text-align: right;
     font-size: x-large;
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 10px 5px;
+    color: rgb(255, 255, 255);
 }
 
 button {
@@ -23,4 +24,5 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #121212;
 }
