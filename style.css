@@ -3,8 +3,6 @@ html {
 }
 
 body {
-    margin: 0;
-
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -12,6 +10,20 @@ body {
     align-items: center;
 
     background-color: black;
+}
+
+@media (max-width: 425px) {
+    #calculator {
+        width: 100%;
+        height: 150vw;
+    }
+}
+
+@media (min-width: 425px) {
+    #calculator {
+        width: 425px;
+        height: 637.5px;
+    }
 }
 
 body * {
@@ -23,8 +35,8 @@ body * {
 
 #calculator {
     display: grid;
-    grid-template-rows: 60px 60px 60px 60px 60px 60px;
-    grid-template-columns: 60px 60px 60px 60px;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 6px;
 }
 
