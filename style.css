@@ -29,8 +29,11 @@ body {
 body * {
     box-sizing: border-box;
     font-size: x-large;
-    font-family: monospace, sans-serif;
     color: white;
+}
+
+main button {
+    font-family: monospace, sans-serif;
 }
 
 #calculator {
