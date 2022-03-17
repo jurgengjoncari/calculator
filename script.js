@@ -1,56 +1,64 @@
-function add(x, y) {return x + y}
-function substract(x, y) {return x - y;}
-function multiply(x, y) {return x * y;}
-function divide(x, y) {return x / y;}
+let output = document.querySelector("#output")
 
-function operate(x, operator, y) {
-	return window[operator](x, y);
+let x = 0
+let operator = undefined
+let y = ""
+
+let operators = ["+", "-", "*", "/"]
+
+function operate(operator, y = 0, x = 0) {
+	if (operator == "+") {
+		return Number(x) + Number(y)
+	}
+	if (operator == "-") {
+		return x - y
+	}
+	if (operator == "*") {
+		return x * y
+	}
+	if (operator == "/") {
+		return x / y
+	}
 }
 
-var outputDisplay = document.querySelector("#output");
-
-var x = "0";
-var operator = "";
-var y = new String;
-
-var operators = Array.from(document.querySelectorAll(".operator")).map((btn) => btn.id);
-
-function display(button) {
-	if (outputDisplay.textContent == "0") {
-		outputDisplay.textContent = "";
+function display(input) {
+	if (output.textContent == "0") {
+		output.textContent = ""
 	}
-	if (button.id == "clear") {
-		outputDisplay.textContent = "0";
-		x = "0";
-		y = "";
-		operator = "";
+	if (input.id == "clear") {
+		output.textContent = 0
+		x = "0"
+		y = ""
+		operator = undefined
 	} else {
-		if (button.id != "equals") {
-			outputDisplay.textContent += button.textContent;
-			if (operators.includes(button.id)) {
-				operator = button.id;
+		if (input.id != "equals") {
+			output.textContent += input.textContent
+			if (operators.includes(input.textContent)) {
+				operator = input.textContent;
 			} else {
-				if (operator == "") {
-					x = x.concat(button.textContent);
+				if (operator == undefined) {
+					x = x.concat(input.textContent)
 				} else {
-					y = y.concat(button.textContent);
+					y = y.concat(input.textContent)
 				}
 			}
 		} else {
-			result = operate(Number(x), operator, Number(y))
-			outputDisplay.textContent = result;
-			x = result;
-			y = "";
-			operator = "";
+			result = operate(x, operator, y)
+			output.textContent = result
+			result = 0
+			x = result
+			y = ""
+			operator = undefined
 		}
 	}
 }
 
-var buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("button")
 
 buttons.forEach(function (button) {
 	button.addEventListener("click", function () {
-		display(button);
+		display(button)
 	})
-});
+})
 
+module.exports = operate

@@ -3,10 +3,11 @@ html {
 }
 
 body {
+    margin: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     background-color: black;
@@ -28,12 +29,15 @@ body {
 
 body * {
     box-sizing: border-box;
-    font-size: x-large;
     color: white;
 }
 
 main button {
     font-family: monospace, sans-serif;
+}
+
+#calculator * {
+    font-size: x-large;
 }
 
 #calculator {
