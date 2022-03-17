@@ -30,6 +30,7 @@ body {
 body * {
     box-sizing: border-box;
     color: white;
+    font-family: sans-serif;
 }
 
 main button {

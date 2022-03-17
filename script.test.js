@@ -6,17 +6,25 @@ const { test, expect } = require('@jest/globals')
 const operate = require('./script')
 
 test('Add two positive numbers', () => {
-    expect(operate('+', 3, 2)).toBe(5)
+    expect(operate(3, '+', 2)).toBe(5)
 })
 
 test('Add a negative number to a positive number', () => {
-    expect(operate('+', -12, 5)).toBe(-7)
+    expect(operate(-12, '+', 5)).toBe(-7)
 })
 
 test('Wrong operator', () => {})
 
-test('Without arguments', () => {
-    expect(operate('+')).toEqual(0)
+test('Pres equal after entering only the first argument', () => {
+    expect(operate(2)).toEqual(2)
+})
+
+test('Pres equal without entering anything', () => {
+    expect(operate()).toEqual(0)
+})
+
+test('Press operator without first argument', () => {
+    // expect(operate())
 })
 
 test('Divide without arguments', () => {
@@ -25,6 +33,10 @@ test('Divide without arguments', () => {
 
 test('Divide without arguments', () => {
     expect(operate('/')).toBeNaN
+})
+
+test('Do two consecutive calculations', () => {
+    expect(operate(operate(2, '+', 9), '+', 6)).toEqual(17)
 })
 
 // Manual tests

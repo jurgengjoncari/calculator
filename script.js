@@ -4,21 +4,20 @@ let x = 0
 let operator = undefined
 let y = ""
 
-let operators = ["+", "-", "*", "/"]
-
-function operate(operator, y = 0, x = 0) {
+function operate(x = 0, operator, y = 0) {
 	if (operator == "+") {
-		return Number(x) + Number(y)
+		result = Number(x) + Number(y)
+	} else if (operator == "-") {
+		result = x - y
+	} else if (operator == "*") {
+		result = x * y
+	} else if (operator == "/") {
+		result = x / y
 	}
-	if (operator == "-") {
-		return x - y
-	}
-	if (operator == "*") {
-		return x * y
-	}
-	if (operator == "/") {
-		return x / y
-	}
+	x = result
+	y = ""
+	operator = undefined
+	return result
 }
 
 function display(input) {
@@ -26,15 +25,12 @@ function display(input) {
 		output.textContent = ""
 	}
 	if (input.id == "clear") {
-		output.textContent = 0
-		x = "0"
-		y = ""
-		operator = undefined
+		output.textContent = operate()
 	} else {
 		if (input.id != "equals") {
 			output.textContent += input.textContent
 			if (operators.includes(input.textContent)) {
-				operator = input.textContent;
+				operator = input.textContent
 			} else {
 				if (operator == undefined) {
 					x = x.concat(input.textContent)
@@ -43,12 +39,7 @@ function display(input) {
 				}
 			}
 		} else {
-			result = operate(x, operator, y)
-			output.textContent = result
-			result = 0
-			x = result
-			y = ""
-			operator = undefined
+			output.textContent = operate(x, operator, y)
 		}
 	}
 }
