@@ -4,10 +4,11 @@ every number I type, should appear in the display
 While I type operators, the screen shouldn't change
 
 While I type a number after the operator,
-it should replace the output of the screen and
+the first digit should replace the output of the screen and then
 it should be added to the display
 
-When I type equals, 
+When I type equals, or an operator, 
 it should call the operate and
 the result should appear on display replacing it
 this result should be assigned as the firs argument
+

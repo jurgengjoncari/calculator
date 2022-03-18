@@ -1,10 +1,10 @@
 let output = document.querySelector("#output")
 
-let x = 0
+let x = "0"
 let operator = undefined
 let y = ""
 
-function operate(x = 0, operator, y = 0) {
+function operate(x = "0", operator, y = "0") {
 	if (operator == "+") {
 		result = Number(x) + Number(y)
 	} else if (operator == "-") {
@@ -17,31 +17,36 @@ function operate(x = 0, operator, y = 0) {
 	x = result
 	y = ""
 	operator = undefined
+	console.log(x, operator, y)
 	return result
 }
 
 function display(input) {
-	if (output.textContent == "0") {
-		output.textContent = ""
-	}
+	// if (output.textContent == "0") {
+	// 	output.textContent = ""
+	// }
 	if (input.id == "clear") {
 		output.textContent = operate()
 	} else {
 		if (input.id != "equals") {
-			output.textContent += input.textContent
-			if (operators.includes(input.textContent)) {
+			if (input.classList.contains('operator')) {
 				operator = input.textContent
 			} else {
 				if (operator == undefined) {
 					x = x.concat(input.textContent)
 				} else {
+					if (y == '') {
+						output.textContent = ''
+					}
 					y = y.concat(input.textContent)
 				}
+				output.textContent = Number(output.textContent + input.textContent)
 			}
 		} else {
 			output.textContent = operate(x, operator, y)
 		}
 	}
+	console.log(x, operator, y)
 }
 
 let buttons = document.querySelectorAll("button")
