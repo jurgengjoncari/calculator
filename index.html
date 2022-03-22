@@ -2,32 +2,33 @@
 <html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="style.css" rel="stylesheet">
+		<link href="style/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="style/ui.css">
 		<title>Calculator</title>
 	</head>
 	<body>
 		<header><h1>Calculator</h1></header>
-		<main id="calculator">
+		<main data-calculator-grid id="calculator">
 			<output id="output">0</output>
 			<button id="clear">C</button>
-			<button id="division" class="operator">/</button>
-			<button id="multiplication" class="operator">*</button>
-			<button id="subtraction" class="operator">-</button>
-			<button id="7" class="digit">7</button>
-			<button id="8" class="digit">8</button>
-			<button id="9" class="digit">9</button>
-			<button id="4" class="digit">4</button>
-			<button id="5" class="digit">5</button>
-			<button id="6" class="digit">6</button>
-			<button id="1" class="digit">1</button>
-			<button id="2" class="digit">2</button>
-			<button id="3" class="digit">3</button>
-			<button id="zero" class="digit">0</button>
+			<button data-operator id="division">/</button>
+			<button data-operator id="multiplication">*</button>
+			<button data-operator id="subtraction">-</button>
+			<button data-digit id="7">7</button>
+			<button data-digit id="8">8</button>
+			<button data-digit id="9">9</button>
+			<button data-digit id="4">4</button>
+			<button data-digit id="5">5</button>
+			<button data-digit id="6">6</button>
+			<button data-digit id="1">1</button>
+			<button data-digit id="2">2</button>
+			<button data-digit id="3">3</button>
+			<button data-digit id="zero">0</button>
 			<button id="dot">.</button>
-			<button id="plus" class="operator">+</button>
-			<button id="equals">=</button>
+			<button data-operator id="plus">+</button>
+			<button data-equals id="equals">=</button>
 		</main>
 		<footer><a href="https://github.com/jurgengjoncari/calculator" target="_blank">Code</a></footer>
-		<script src="script.js"></script>
+		<script src="script3.js"></script>
 	</body>
 </html>

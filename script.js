@@ -1,60 +1,73 @@
-let output = document.querySelector("#output")
+const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+const operators = ['+', '-', '*', '/']
 
-let x = "0"
-let operator = undefined
-let y = ""
+class Calculator {
+    constructor() {
+        this.operator = undefined
+        this.operand = ''
+        this.result = '0'
+    }
 
-function operate(x = "0", operator, y = "0") {
-	if (operator == "+") {
-		result = Number(x) + Number(y)
-	} else if (operator == "-") {
-		result = x - y
-	} else if (operator == "*") {
-		result = x * y
-	} else if (operator == "/") {
-		result = x / y
-	}
-	x = result
-	y = ""
-	operator = undefined
-	console.log(x, operator, y)
-	return result
+    clear() {
+        this.operator = undefined
+        this.operand = ''
+        this.result = '0'
+    }
+
+    appendNumber(number) {
+        if (this.operator == undefined) {
+            if (this.result == '0') {
+                this.result = number
+            } else {
+                this.result = String(this.result).concat(number)
+            }
+        } else {
+            this.operand = String(this.operand).concat(number)
+        }
+    }
+    
+    calculate(operator) {
+        if (this.operand == '') {
+            this.operand = this.result
+        }
+        if (this.operator == "+") {
+            this.result = Number(this.result) + Number(this.operand)
+        } else if (this.operator == "-") {
+            this.result -= this.operand
+        } else if (operator == "*") {
+            this.result *= this.operand
+        } else if (operator == "/") {
+            this.result /= this.operand
+        }
+        this.operand = ''
+        return this.result
+    }
+    
+    updateDisplay() {
+
+    }
+    
+    chooseOperator(operator) {
+        if (this.operator != undefined && operand != '') {
+            this.result = calculate(operator)
+        }
+        operator = input
+    }
+    
+    compute() {
+        if (operator != undefined) {
+            result = calculate(operator)
+        }
+        operator = undefined
+    }   
 }
 
-function display(input) {
-	// if (output.textContent == "0") {
-	// 	output.textContent = ""
-	// }
-	if (input.id == "clear") {
-		output.textContent = operate()
-	} else {
-		if (input.id != "equals") {
-			if (input.classList.contains('operator')) {
-				operator = input.textContent
-			} else {
-				if (operator == undefined) {
-					x = x.concat(input.textContent)
-				} else {
-					if (y == '') {
-						output.textContent = ''
-					}
-					y = y.concat(input.textContent)
-				}
-				output.textContent = Number(output.textContent + input.textContent)
-			}
-		} else {
-			output.textContent = operate(x, operator, y)
-		}
-	}
-	console.log(x, operator, y)
-}
+const calculator = new Calculator
 
-let buttons = document.querySelectorAll("button")
+const calculatorGrid = document.querySelector('#calculator')
 
-buttons.forEach(function (button) {
-	button.addEventListener("click", function () {
-		display(button)
-	})
-})
+const digitButtons = document.querySelectorAll('[data-digit]')
+const operatorButtons = document.querySelectorAll('[data-operator]')
+const equalsButton = document.querySelector('[data-equals]')
 
-module.exports = operate
+

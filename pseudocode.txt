@@ -1,14 +1,141 @@
 while I haven't pressed an operator yet, 
-every number I type, should appear in the display
+every number I type, 
+- the first digit should replace the output of the screen and then
+- it should be added to the display if I keep typing numbers
+- should be saved in result        
 
-While I type operators, the screen shouldn't change
+While I type an operator for the first time, 
+    - it should be saved in memory,
+    - Display doesn't change, it might just flick
 
-While I type a number after the operator,
-the first digit should replace the output of the screen and then
-it should be added to the display
+    When I type equals, or the operator is typed for the second time, 
+    - it should call the operate and
+    - the result should appear on display replacing it
+    - this result should be assigned as the first argument
 
-When I type equals, or an operator, 
-it should call the operate and
-the result should appear on display replacing it
-this result should be assigned as the firs argument
+
+set result to 0
+set temp to 0
+set operator to undefined
+
+The display is 0
+
+1. I type 2
+    result is updated to 2
+    The display is 2
+
+2. I type 3
+    in display is 23
+    the result is updated to 23
+
+3. I type +
+    operator is set to +
+
+4. I type 5
+    23 is replaced by 5
+    temp is updated to 5
+
+5. I type 1
+    in display is 51
+    temp is updated to 51
+
+6.1. Case 1:
+    I type =
+        result is updated to 74
+        in display is 74
+        operator is set to undefined
+
+    I type +
+        operator is set to +
+    
+6.2. Case 2:
+    I type +
+        result is updated to 74
+        in display is 74
+        operator is set to +
+
+===============
+by dafault the display is 0
+
+we have three types:
+    - number
+    - +
+    - =
+
+First type number
+    Second type +
+        Third type number
+        Third type =
+    Second type =
+
+First type +
+    Second type number
+    Second type =
+
+First type =
+    Second type number
+    Second type +
+
+======================
+by default the display is 0
+
+We have two types of buttons
+    - number
+    - operator
+
+first type number
+    second type number
+        third type number
+        third type operator
+    second type operator
+first type operator
+    second type number
+    second type operator
+
+....
+
+This is a very difficult app because it depends on so many things
+There are different cases, such as the order
+
+====
+If I type number
+type operator
+type equal, 
+it will apply that operator to that number
+In other words, it will set temp equal to result
+
+======
+There are three options for me to type: a number, an operator, equals. 
+
+You can only type one thing at a time. The order of things matters. 
+Therefore, every step I should check for the previews steps. 
+
+By default the result of the calculator is 0. 
+
+I will call the first number 'result' and
+the second number 'temp'.
+
+There's an operate function which takes an operator and a temp and modifies the result
+
+This function, every time it's called, it empties the temp and the operator. 
+
+If I type a number:
+    if I haven't typed an operator:
+        Every number I type will be added to the result
+
+    otherwise, 
+        Every number I type will be added to the temp
+
+If I type equal:
+    If I haven't typed an operator:
+        nothing will happen
+
+    else, if I've typed an operator:
+        I will call the operate function with the operation and the last number
+    set operator to undefined
+
+If I enter operator:
+    if I have typed another operator and a number after:
+        I will call the operate function with the operation and the last number on the previews result
+    it will replace whatever operator is in memory
 
