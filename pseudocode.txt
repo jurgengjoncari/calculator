@@ -105,32 +105,32 @@ it will apply that operator to that number
 In other words, it will set current operand equal to previews operand
 
 ======
-There are four options for me to type: a number, an operator, equals and clear. 
+There are four options for me to type: a number (and dot), an operator, equals and clear. 
 
-There is a display. By default the previews operand of the calculator is 0. 
+There is a display. By default it displays 0. 
 
 You can only type one thing at a time. The order of things matters. 
 Therefore, every step I should check for the previews steps. 
 
-I will call the first number 'previews operand' and
-the second number 'current operand'.
+By default the current operand is 0. 
 
-There's an compute function which takes an operator and a current operand and modifies the previews operand
+I will call the number I type, 'current operand' until I type an operator, then it's called 'previews operand'.
 
-This function, every time it's called, it empties the current operand and the operator. 
-
-compute current operand and operator:
-    based on the operator, will update the previews operand
-    modify operator to undefined
-    set current operand to empty
+compute operator:
+    based on the operator, will update the current operand with the previews operand
+    set operator to undefined
+    set previews operand to empty
 
 append number:
-    if I haven't typed an operator:
-        The digit will be appended to the previews operand
-
-    otherwise, 
+    if I have typed an operator:
+        set the previews operand equal to current operator
+        set current operand to empty
+    else:
         The digit will be appended to the current operand
-    when I call this function, it will append the number in display
+    when I call this function, it will display the current operand to output
+
+
+--Connecting to the DOM--
 
 If I type a digit:
     call the append function
