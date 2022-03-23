@@ -2,46 +2,46 @@ while I haven't pressed an operator yet,
 every number I type, 
 - the first digit should replace the output of the screen and then
 - it should be added to the display if I keep typing numbers
-- should be saved in result        
+- should be saved in previews operand        
 
 While I type an operator for the first time, 
     - it should be saved in memory,
     - Display doesn't change, it might just flick
 
     When I type equals, or the operator is typed for the second time, 
-    - it should call the operate and
-    - the result should appear on display replacing it
-    - this result should be assigned as the first argument
+    - it should call the compute and
+    - the previews operand should appear on display replacing it
+    - this previews operand should be assigned as the first argument
 
 
-set result to 0
-set temp to 0
+set previews operand to 0
+set current operand to 0
 set operator to undefined
 
 The display is 0
 
 1. I type 2
-    result is updated to 2
+    previews operand is updated to 2
     The display is 2
 
 2. I type 3
     in display is 23
-    the result is updated to 23
+    the previews operand is updated to 23
 
 3. I type +
     operator is set to +
 
 4. I type 5
     23 is replaced by 5
-    temp is updated to 5
+    current operand is updated to 5
 
 5. I type 1
     in display is 51
-    temp is updated to 51
+    current operand is updated to 51
 
 6.1. Case 1:
     I type =
-        result is updated to 74
+        previews operand is updated to 74
         in display is 74
         operator is set to undefined
 
@@ -50,7 +50,7 @@ The display is 0
     
 6.2. Case 2:
     I type +
-        result is updated to 74
+        previews operand is updated to 74
         in display is 74
         operator is set to +
 
@@ -102,40 +102,50 @@ If I type number
 type operator
 type equal, 
 it will apply that operator to that number
-In other words, it will set temp equal to result
+In other words, it will set current operand equal to previews operand
 
 ======
-There are three options for me to type: a number, an operator, equals. 
+There are four options for me to type: a number, an operator, equals and clear. 
+
+There is a display. By default the previews operand of the calculator is 0. 
 
 You can only type one thing at a time. The order of things matters. 
 Therefore, every step I should check for the previews steps. 
 
-By default the result of the calculator is 0. 
+I will call the first number 'previews operand' and
+the second number 'current operand'.
 
-I will call the first number 'result' and
-the second number 'temp'.
+There's an compute function which takes an operator and a current operand and modifies the previews operand
 
-There's an operate function which takes an operator and a temp and modifies the result
+This function, every time it's called, it empties the current operand and the operator. 
 
-This function, every time it's called, it empties the temp and the operator. 
+compute current operand and operator:
+    based on the operator, will update the previews operand
+    modify operator to undefined
+    set current operand to empty
 
-If I type a number:
+append number:
     if I haven't typed an operator:
-        Every number I type will be added to the result
+        The digit will be appended to the previews operand
 
     otherwise, 
-        Every number I type will be added to the temp
+        The digit will be appended to the current operand
+    when I call this function, it will append the number in display
+
+If I type a digit:
+    call the append function
 
 If I type equal:
-    If I haven't typed an operator:
-        nothing will happen
-
-    else, if I've typed an operator:
-        I will call the operate function with the operation and the last number
-    set operator to undefined
+    If I've typed an operator:
+        I will call the compute function with the operation and the current operand
 
 If I enter operator:
     if I have typed another operator and a number after:
-        I will call the operate function with the operation and the last number on the previews result
+        call the equal function 
     it will replace whatever operator is in memory
+
+If I type clear:
+    it will replace operator with undefined,
+    it will replace previews operand with zero,
+    it will set current operand as empty
 
