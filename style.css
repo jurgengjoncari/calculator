@@ -5,7 +5,7 @@ html {
 body * {
     box-sizing: border-box;
     color: white;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
@@ -50,7 +50,9 @@ body {
     line-height: 60px;
     padding: 0 1.25rem;
     border-bottom: 1px solid gray;
-    font-family: Courier, monospace;
+    font-size: 2rem;
+    font-family: 'Segment7Standard', Courier, monospace;
+    color: rgb(0, 255, 0);
 }
 
 #plus {
