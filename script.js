@@ -6,15 +6,18 @@ class Calculator {
         this.output = document.querySelector('[data-output]')
     }
 
-    clear() {
-        this.operator = undefined
-        this.currentOperand = '0'
-        this.previewsOperand = ''
-        this.output.textContent = '0'
+    delete() {
+        if (isNaN(this.currentOperand) || this.currentOperand.length == 1) {
+            this.operator = undefined
+            this.currentOperand = '0'
+            this.previewsOperand = ''
+        } else {
+            this.currentOperand = this.currentOperand.toString().slice(0, -1)
+        }
     }
 
     appendDigit(digit) {
-        if (this.currentOperand == '0') {
+        if (this.currentOperand == '0' || isNaN(this.currentOperand)) {
             this.currentOperand = digit
         } else {
             this.currentOperand = String(this.currentOperand).concat(digit)
@@ -28,19 +31,19 @@ class Calculator {
         if (this.currentOperand == '') {
             this.currentOperand = '0.'
         }
-        return this.currentOperand
     }
     
     setOperator(operator) {
+        if (this.operator != undefined && this.currentOperand != '') {
+            this.compute(operator)
+            this.updateDisplay()
+        }
         this.operator = operator
         this.previewsOperand = this.currentOperand
         this.currentOperand = ''
     }
     
     compute() {
-        if (this.currentOperand == '') {
-            this.currentOperand = this.previewsOperand
-        }
         let result
         const x = parseFloat(this.previewsOperand)
         const y = parseFloat(this.currentOperand)
@@ -58,8 +61,18 @@ class Calculator {
                 result = x / y
                 break
         }
+        this.previewsOperand = this.currentOperand
         this.currentOperand = result
-        return result
+        this.operator = undefined
+    }
+    
+    updateDisplay() {
+        if (this.currentOperand.length >= 16) {
+            this.output.textContent = parseFloat(this.currentOperand).toExponential()
+        }
+        else {
+            this.output.textContent = this.currentOperand
+        }
     }
 }
 
@@ -68,35 +81,59 @@ const calculator = new Calculator
 const digitButtons = document.querySelectorAll('[data-digit]')
 const operatorButtons = document.querySelectorAll('[data-operator]')
 const equalsButton = document.querySelector('[data-equals]')
-const clearButton = document.querySelector('[data-clear]')
+const deleteButton = document.querySelector('[data-delete]')
 const decimalButton = document.querySelector('[data-decimal]')
 
-const output = document.querySelector('[data-output]')
+const calculatorGrid = document.querySelector('#calculator')
 
 digitButtons.forEach((button) => {
     button.addEventListener('click', () => {
         calculator.appendDigit(button.textContent)
-        output.textContent = button.textContent
+        calculator.updateDisplay()
     })
 })
 
 decimalButton.addEventListener('click', () => {
-    output.textContent = calculator.appendDecimal()
+    calculator.appendDecimal()
+    calculator.updateDisplay()
 })
 
 operatorButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        if (calculator.operator != undefined && calculator.currentOperand != '') {
-            output.textContent = calculator.compute(button.textContent)
-        }
         calculator.setOperator(button.textContent)
     })
 })
 
 equalsButton.addEventListener('click', () => {
-    output.textContent = calculator.compute()
+    calculator.compute()
+    calculator.updateDisplay()
 })
 
-clearButton.addEventListener('click', () => {
-    calculator.clear()
+deleteButton.addEventListener('click', () => {
+    calculator.delete()
+    calculator.updateDisplay()
+})
+
+document.addEventListener('keydown', function (event) {
+    const digitsPattern = /[0-9]/
+    const operatorsPattern = /[+\-*\/]/
+    if (event.key.match(digitsPattern)) {
+        calculator.appendDigit(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key.match(operatorsPattern)) {
+        calculator.setOperator(event.key)
+    }
+    if (event.key == '.') {
+        calculator.appendDecimal()
+        calculator.updateDisplay()
+    }
+    if (event.key == '=' || event.key == 'Enter') {
+        calculator.compute()
+        calculator.updateDisplay()
+    }
+    if (event.key == 'Backspace') {
+        calculator.delete()
+        calculator.updateDisplay()
+    }
 })

@@ -1,7 +1,5 @@
 # Calculator
 
-This is a very basic calculator as per the instructions from [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator).
+This is a very basic calculator: https://jurgengjoncari.github.io/calculator/
 
-Link to the page: https://jurgengjoncari.github.io/calculator/
-
-I've updated the logic by implementing class notation. 
+To do this I've used classes - from ES6, and semantic HTML.
