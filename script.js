@@ -7,7 +7,7 @@ class Calculator {
     }
 
     delete() {
-        if (isNaN(this.currentOperand) || this.currentOperand.length == 1) {
+        if (isNaN(this.currentOperand) || this.currentOperand.length == 1 || this.currentOperand == Infinity) {
             this.operator = undefined
             this.currentOperand = '0'
             this.previewsOperand = ''
@@ -17,7 +17,7 @@ class Calculator {
     }
 
     appendDigit(digit) {
-        if (this.currentOperand == '0' || isNaN(this.currentOperand)) {
+        if (this.currentOperand == '0' || isNaN(this.currentOperand) || this.currentOperand == Infinity) {
             this.currentOperand = digit
         } else {
             this.currentOperand = String(this.currentOperand).concat(digit)
