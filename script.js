@@ -84,8 +84,6 @@ const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const decimalButton = document.querySelector('[data-decimal]')
 
-const calculatorGrid = document.querySelector('#calculator')
-
 digitButtons.forEach((button) => {
     button.addEventListener('click', () => {
         calculator.appendDigit(button.textContent)
