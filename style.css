@@ -22,19 +22,19 @@ body {
     --keycap-size: 18mm;
 }
 
-#calculator {
+#numpad {
     display: grid;
-    grid-template-rows: repeat(6, var(--keycap-size));
+    grid-template-rows: repeat(5, var(--keycap-size));
     grid-template-columns: repeat(4, var(--keycap-size));
     gap: 2.1mm;
     justify-content: center;
 }
 
-#calculator * {
+#numpad * {
     font-size: x-large;
 }
 
-#calculator button {
+#numpad button {
     font-family: arial, monospace, sans-serif;
     background-color: rgba(255, 255, 255, 0.15);
     border: none;
@@ -42,7 +42,7 @@ body {
     border-radius: 6px;
 }
 
-#calculator output {
+output {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -58,12 +58,12 @@ body {
 
 #plus {
     height: 100% !important;
-    grid-row: 3/5;
+    grid-row: 2 / span 2;
     grid-column: 4/5;
 }
 
 #equals {
-    grid-row: 5/7;
+    grid-row: 4 / span 2;
     grid-column: 4/5;
 
     background-color: blue !important;
