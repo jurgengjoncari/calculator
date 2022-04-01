@@ -113,13 +113,11 @@ deleteButton.addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', function (event) {
-    const digitsPattern = /[0-9]/
-    const operatorsPattern = /[+\-*\/]/
-    if (event.key.match(digitsPattern)) {
+    if (event.key.match(/[0-9]/)) {
         calculator.appendDigit(event.key)
         calculator.updateDisplay()
     }
-    if (event.key.match(operatorsPattern)) {
+    if (event.key.match(/[+\-*\/]/)) {
         calculator.setOperator(event.key)
     }
     if (event.key == '.') {
