@@ -17,7 +17,5 @@ To do this project I've used ES6, HTML5, and CSS3.
 - Make the font of the banner a bit more interesting. 
 - Every time a button is typed, the output should flick. 
 - Check the animations, such as the hover state, etc. 
-- Fix colors. 
-- The blue is too purple. 
-- Make the colors look good for dark mode. 
+- Fix colors; the blue is too purple; make the colors look good for dark mode. 
 - Find a way to differentiate the output from the background. 
