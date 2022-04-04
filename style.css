@@ -1,3 +1,5 @@
+@import url(./node_modules/default-styles/index.css);
+
 :root {
     --primary-color: #30d158;
     --accent-color: #0A84FF;
