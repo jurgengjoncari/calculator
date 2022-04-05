@@ -1,4 +1,4 @@
-@import url("node_modules/default-styles/index.css");
+@import "node_modules/default-styles/index.css";
 
 :root {
     --primary-color: #30d158;
