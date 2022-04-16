@@ -1,0 +1,38 @@
+$body-bg: black;
+$body-color: white;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: Segment7;
+    src: url(Segment7Standard.otf);
+}
+
+#numpad {
+    $keycap-size: 18mm;
+
+    grid-template-columns: repeat(4, $keycap-size);
+    grid-template-rows: repeat(5, $keycap-size);
+}
+
+#plus {
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    grid-column-start: 4;
+}
+
+#equals {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 4;
+}
+
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#output {
+    font-family: Segment7;
+}

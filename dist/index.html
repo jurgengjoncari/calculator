@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/segment7" type="text/css"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+		<title>Calculator</title>
+	</head>
+	<body class="container min-vh-100 d-flex flex-column justify-content-between align-items-center">
+		<header class=""><h1>Calculator</h1></header>
+		<main>
+			<output data-output id="output" class="text-end display-4 d-block">0</output>
+			<hr>
+			<div id="numpad" class="d-grid gap-2">
+				<button class="btn btn-lg btn-secondary" data-delete><abbr title="Delete">Del</abbr></button>
+				<button class="btn btn-lg btn-secondary" data-operator id="division">/</button>
+				<button class="btn btn-lg btn-secondary" data-operator id="multiplication">*</button>
+				<button class="btn btn-lg btn-secondary" data-operator id="subtraction">-</button>
+				<button class="btn btn-lg btn-secondary" data-digit>7</button>
+				<button class="btn btn-lg btn-secondary" data-digit>8</button>
+				<button class="btn btn-lg btn-secondary" data-digit>9</button>
+				<button class="btn btn-lg btn-secondary" data-operator id="plus">+</button>
+				<button class="btn btn-lg btn-secondary" data-digit>4</button>
+				<button class="btn btn-lg btn-secondary" data-digit>5</button>
+				<button class="btn btn-lg btn-secondary" data-digit>6</button>
+				<button class="btn btn-lg btn-secondary" data-digit>1</button>
+				<button class="btn btn-lg btn-secondary" data-digit>2</button>
+				<button class="btn btn-lg btn-secondary" data-digit>3</button>
+				<button class="btn btn-lg btn-primary" data-equals id="equals">=</button>
+				<button class="btn btn-lg btn-secondary" data-digit id="zero">0</button>
+				<button class="btn btn-lg btn-secondary" data-decimal id="decimal">.</button>
+			</div>
+		</main>
+		<footer>
+			<a href="https://linkedin.com/jurgengjoncari" target="_blank">
+				<i class="bi bi-linkedin"></i>
+				Jurgen Gjonçari
+				<i class="bi bi-box-arrow-up-right"></i>
+			</a>
+			•
+			<a href="https://github.com/jurgengjoncari/calculator" target="_blank">
+				<i class="bi bi-github"></i>
+				code 
+				<i class="bi bi-box-arrow-up-right"></i>
+			</a> 
+		</footer>
+		<script src="script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</body>
+</html>
