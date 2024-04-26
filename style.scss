@@ -1,6 +1,14 @@
-$body-color: white;
+// Import Bootstrap’s core variables and mixins
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/variables-dark";
+@import "node_modules/bootstrap/scss/mixins";
 
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+// Your variable overrides
+$body-bg-dark: $black; // Use black instead of gray-900 for body background
+
+// Import Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
 
 @font-face {
     font-family: Segment7;
