@@ -1,11 +1,19 @@
-// Import Bootstrap’s core variables and mixins
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/variables-dark";
 @import "node_modules/bootstrap/scss/mixins";
 
-// Your variable overrides
+// Variable overrides
 $body-bg-dark: $black; // Use black instead of gray-900 for body background
+
+$transparency-amount: 0.48; // 50% transparency
+
+// Iterate over each color in $theme-colors and apply transparency
+@each $color-name, $color-value in $theme-colors {
+    $theme-colors: map-merge($theme-colors, (
+            $color-name: rgba($color-value, $transparency-amount)
+    ));
+}
 
 // Import Bootstrap and its default variables
 @import "node_modules/bootstrap/scss/bootstrap";
@@ -41,7 +49,7 @@ $body-bg-dark: $black; // Use black instead of gray-900 for body background
 }
 
 #output {
-    font-family: Segment7;
+    font-family: Segment7, sans-serif;
 }
 
 a:link {
