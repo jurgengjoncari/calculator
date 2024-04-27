@@ -10,25 +10,29 @@
 	<body class="container min-vh-100 d-flex flex-column justify-content-between align-items-center">
 		<header class=""><h1>Calculator</h1></header>
 		<main>
-			<output data-output id="output" class="text-end display-4 d-block form-control-lg border my-2">0</output>
-			<div id="numpad" class="d-grid gap-2">
-				<button class="btn btn-lg btn-secondary" data-delete><abbr title="Delete">Del</abbr></button>
-				<button class="btn btn-lg btn-secondary" data-operator id="division">/</button>
-				<button class="btn btn-lg btn-secondary" data-operator id="multiplication">*</button>
-				<button class="btn btn-lg btn-secondary" data-operator id="subtraction">-</button>
-				<button class="btn btn-lg btn-secondary" data-digit>7</button>
-				<button class="btn btn-lg btn-secondary" data-digit>8</button>
-				<button class="btn btn-lg btn-secondary" data-digit>9</button>
-				<button class="btn btn-lg btn-secondary" data-operator id="plus">+</button>
-				<button class="btn btn-lg btn-secondary" data-digit>4</button>
-				<button class="btn btn-lg btn-secondary" data-digit>5</button>
-				<button class="btn btn-lg btn-secondary" data-digit>6</button>
-				<button class="btn btn-lg btn-secondary" data-digit>1</button>
-				<button class="btn btn-lg btn-secondary" data-digit>2</button>
-				<button class="btn btn-lg btn-secondary" data-digit>3</button>
-				<button class="btn btn-lg btn-primary" data-equals id="equals">=</button>
-				<button class="btn btn-lg btn-secondary" data-digit id="zero">0</button>
-				<button class="btn btn-lg btn-secondary" data-decimal id="decimal">.</button>
+			<div class="card">
+				<div class="card-body">
+					<output data-output id="output" class="text-end display-4 d-block form-control-lg border my-2">0</output>
+					<div id="numpad" class="d-grid gap-2">
+						<button class="btn btn-lg btn-secondary" data-delete><abbr title="Delete">Del</abbr></button>
+						<button class="btn btn-lg btn-secondary" data-operator id="division">/</button>
+						<button class="btn btn-lg btn-secondary" data-operator id="multiplication">*</button>
+						<button class="btn btn-lg btn-secondary" data-operator id="subtraction">-</button>
+						<button class="btn btn-lg btn-secondary" data-digit>7</button>
+						<button class="btn btn-lg btn-secondary" data-digit>8</button>
+						<button class="btn btn-lg btn-secondary" data-digit>9</button>
+						<button class="btn btn-lg btn-secondary" data-operator id="plus">+</button>
+						<button class="btn btn-lg btn-secondary" data-digit>4</button>
+						<button class="btn btn-lg btn-secondary" data-digit>5</button>
+						<button class="btn btn-lg btn-secondary" data-digit>6</button>
+						<button class="btn btn-lg btn-secondary" data-digit>1</button>
+						<button class="btn btn-lg btn-secondary" data-digit>2</button>
+						<button class="btn btn-lg btn-secondary" data-digit>3</button>
+						<button class="btn btn-lg btn-primary" data-equals id="equals">=</button>
+						<button class="btn btn-lg btn-secondary" data-digit id="zero">0</button>
+						<button class="btn btn-lg btn-secondary" data-decimal id="decimal">.</button>
+					</div>
+				</div>
 			</div>
 		</main>
 		<footer>
