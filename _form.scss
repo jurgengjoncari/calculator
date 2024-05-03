@@ -1,0 +1,16 @@
+// Forms
+
+$input-padding-y-xl:                    $input-btn-padding-y-xl;
+$input-padding-x-xl:                    $input-btn-padding-x-xl;
+$input-font-size-xl:                    $input-btn-font-size-xl;
+
+$input-height-xl:                       add($input-line-height * 1em, add($input-padding-y-xl * 2, $input-height-border, false)) !default;
+
+$input-border-radius-xl:                $border-radius-xl !default;
+
+.form-control-xl {
+  min-height: $input-height-xl;
+  padding: $input-padding-y-xl $input-padding-x-xl;
+  @include font-size($input-font-size-xl);
+  @include border-radius($input-border-radius-xl);
+}

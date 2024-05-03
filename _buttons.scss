@@ -1,0 +1,23 @@
+// Buttons
+
+$btn-padding-y-xl:            $input-btn-padding-y-xl;
+$btn-padding-x-xl:            $input-btn-padding-x-xl;
+$btn-font-size-xl:            $input-btn-font-size-xl;
+
+$btn-border-radius-xl:        $border-radius-xl;
+
+.btn-secondary {
+  @if $body-bg-dark == $black and $secondary == rgba($white, $opacity-30) {
+    color: $white !important;
+  }
+}
+
+.btn-tertiary {
+  @if $body-bg-dark == $black and $tertiary == rgba($white, $opacity-20) {
+    color: $white !important;
+  }
+}
+
+.btn-xl {
+  @include button-size($btn-padding-y-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-border-radius-xl);
+}

@@ -1,0 +1,77 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Colors
+// Reduced blue value
+$gray-100: #f8f8f8;
+$gray-200: #ececec;
+$gray-300: #dedede;
+$gray-400: #cdcdcd;
+$gray-500: #acacac;
+$gray-600: #6b6b6b;
+$gray-700: #494949;
+$gray-800: #343434;
+$gray-900: #212121;
+
+$grays: (
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900
+);
+
+$opacity-0: 0;
+$opacity-10: 0.1;
+$opacity-20: 0.2;
+$opacity-30: 0.3;
+$opacity-40: 0.4;
+$opacity-50: 0.5;
+$opacity-60: 0.6;
+$opacity-70: 0.7;
+$opacity-80: 0.8;
+$opacity-90: 0.9;
+$opacity-100: 1;
+
+$secondary: rgba($white, $opacity-30);
+$tertiary: rgba($white, $opacity-20);
+
+$dark: $gray-900;
+
+$theme-colors: (
+        "primary":    $primary,
+        "secondary":  $secondary,
+        "tertiary":   $tertiary,
+        "success":    $success,
+        "info":       $info,
+        "warning":    $warning,
+        "danger":     $danger,
+        "light":      $light,
+        "dark":       $dark
+);
+
+$card-bg: transparentize($dark, $opacity-10);
+
+$border-radius: $border-radius-xl;
+
+@import "node_modules/bootstrap/scss/variables-dark";
+
+// Body
+$body-bg-dark: $black; // Use black instead of gray-900 for body background
+
+$font-size-xl:                $font-size-base * 1.5;
+$border-radius-xl: .75rem;
+
+$input-btn-padding-y-xl:      .75rem;
+$input-btn-padding-x-xl:      1.25rem;
+$input-btn-font-size-xl:      $font-size-xl;
+
+// Import Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "buttons";
+@import "form";
