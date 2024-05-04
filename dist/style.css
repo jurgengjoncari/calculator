@@ -105,10 +105,10 @@
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
   --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-  --bs-border-radius: 1rem;
+  --bs-border-radius: 0.65rem;
   --bs-border-radius-sm: 0.25rem;
   --bs-border-radius-lg: 0.5rem;
-  --bs-border-radius-xl: 0.75rem;
+  --bs-border-radius-xl: 0.65rem;
   --bs-border-radius-xxl: 2rem;
   --bs-border-radius-2xl: var(--bs-border-radius-xxl);
   --bs-border-radius-pill: 50rem;
@@ -5222,6 +5222,19 @@ textarea.form-control-lg {
   --bs-list-group-active-border-color: var(--bs-secondary-text-emphasis);
 }
 
+.list-group-item-tertiary {
+  --bs-list-group-color: var(--bs-tertiary-text-emphasis);
+  --bs-list-group-bg: var(--bs-tertiary-bg-subtle);
+  --bs-list-group-border-color: var(--bs-tertiary-border-subtle);
+  --bs-list-group-action-hover-color: var(--bs-emphasis-color);
+  --bs-list-group-action-hover-bg: var(--bs-tertiary-border-subtle);
+  --bs-list-group-action-active-color: var(--bs-emphasis-color);
+  --bs-list-group-action-active-bg: var(--bs-tertiary-border-subtle);
+  --bs-list-group-active-color: var(--bs-tertiary-bg-subtle);
+  --bs-list-group-active-bg: var(--bs-tertiary-text-emphasis);
+  --bs-list-group-active-border-color: var(--bs-tertiary-text-emphasis);
+}
+
 .list-group-item-success {
   --bs-list-group-color: var(--bs-success-text-emphasis);
   --bs-list-group-bg: var(--bs-success-bg-subtle);
@@ -5316,7 +5329,7 @@ textarea.form-control-lg {
   color: var(--bs-btn-close-color);
   background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
   border: 0;
-  border-radius: 1rem;
+  border-radius: 0.65rem;
   opacity: var(--bs-btn-close-opacity);
 }
 .btn-close:hover {
@@ -11967,7 +11980,7 @@ textarea.form-control-lg {
   --bs-btn-padding-y: 0.75rem;
   --bs-btn-padding-x: 1.25rem;
   --bs-btn-font-size: calc(1.275rem + 0.3vw);
-  --bs-btn-border-radius: 0.75rem;
+  --bs-btn-border-radius: 0.65rem;
 }
 @media (min-width: 1200px) {
   .btn-xl {
@@ -11975,16 +11988,24 @@ textarea.form-control-lg {
   }
 }
 
+button {
+  border: 0 !important;
+}
+
 .form-control-xl {
   min-height: calc(1.5em + 1.5rem + calc(var(--bs-border-width) * 2));
   padding: 0.75rem 1.25rem;
   font-size: calc(1.275rem + 0.3vw);
-  border-radius: 0.75rem;
+  border-radius: 0.65rem;
 }
 @media (min-width: 1200px) {
   .form-control-xl {
     font-size: 1.5rem;
   }
+}
+
+.card {
+  border: none;
 }
 
 @font-face {

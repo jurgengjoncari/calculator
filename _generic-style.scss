@@ -55,23 +55,27 @@ $theme-colors: (
         "dark":       $dark
 );
 
-$card-bg: transparentize($dark, $opacity-10);
-
-$border-radius: $border-radius-xl;
-
 @import "node_modules/bootstrap/scss/variables-dark";
 
 // Body
 $body-bg-dark: $black; // Use black instead of gray-900 for body background
 
+// Add xl size
 $font-size-xl:                $font-size-base * 1.5;
-$border-radius-xl: .75rem;
+$border-radius-xl: .65rem;
 
 $input-btn-padding-y-xl:      .75rem;
 $input-btn-padding-x-xl:      1.25rem;
 $input-btn-font-size-xl:      $font-size-xl;
 
-// Import Bootstrap and its default variables
+$border-radius: $border-radius-xl;
+
+$card-bg: transparentize($dark, $opacity-10);
+
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "buttons";
 @import "form";
+
+.card {
+  border: none;
+}

@@ -21,3 +21,7 @@ $btn-border-radius-xl:        $border-radius-xl;
 .btn-xl {
   @include button-size($btn-padding-y-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-border-radius-xl);
 }
+
+button {
+  border: 0 !important;
+}
