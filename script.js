@@ -1,4 +1,7 @@
-import "./node_modules/@jurgengjoncari/default-styles/components/dialog/floating-panel/appearance-settings/index.js";
+if (["localhost", "127.0.0.1"].includes(location.hostname)) {
+  import("./node_modules/@jurgengjoncari/default-styles/components/dialog/floating-panel/appearance-settings/index.js");
+}
+
 import Calculator from './calculator.js'
 
 const calculator = new Calculator
