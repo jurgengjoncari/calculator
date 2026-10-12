@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass style.scss dist/style.css --watch --style=compressed"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,12 +16,8 @@
     "url": "https://github.com/jurgengjoncari/calculator/issues"
   },
   "homepage": "https://github.com/jurgengjoncari/calculator#readme",
-  "devDependencies": {
-    "bootstrap": "^5.3.0-alpha2",
-    "bootstrap-icons": "^1.10.3",
-    "sass": "^1.60.0"
-  },
   "dependencies": {
+    "@jurgengjoncari/default-styles": "github:jurgengjoncari/default-styles",
     "npm-check-updates": "^16.8.0"
   }
 }

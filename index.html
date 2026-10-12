@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/segment7" type="text/css"/>
+		<title>Calculator</title>
+	</head>
+	<body>
+		<!-- <header><h3>Calculator</h3></header> -->
+		<main>
+			<div id="calculator">
+				<div class="surface">
+					<form>
+						<output data-output id="output" class="input">0</output>
+						<div id="numpad">
+							<button type="reset" data-delete class="is-outline">C</button>
+							<button type="button" data-operator id="division" class="is-outline">÷</button>
+							<button type="button" data-operator id="multiplication" class="is-outline">×</button>
+							<button type="button" data-operator id="subtraction" class="is-outline">-</button>
+							<button type="button" data-digit>7</button>
+							<button type="button" data-digit>8</button>
+							<button type="button" data-digit>9</button>
+							<button type="button" data-operator id="plus" class="is-outline">+</button>
+							<button type="button" data-digit>4</button>
+							<button type="button" data-digit>5</button>
+							<button type="button" data-digit>6</button>
+							<button type="button" data-digit>1</button>
+							<button type="button" data-digit>2</button>
+							<button type="button" data-digit>3</button>
+							<button type="button" data-equals id="equals" class="is-filled">=</button>
+							<button type="button" data-digit id="zero">0</button>
+							<button type="button" data-decimal id="decimal" class="is-outline">.</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<a href="https://github.com/jurgengjoncari/calculator" target="_blank" rel="noopener noreferrer">GitHub</a>
+		</footer>
+		<script src="script.js" type="module"></script>
+	</body>
+</html>

@@ -1,3 +1,4 @@
+import "./node_modules/@jurgengjoncari/default-styles/components/dialog/floating-panel/appearance-settings/index.js";
 import Calculator from './calculator.js'
 
 const calculator = new Calculator

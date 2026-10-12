@@ -1,5 +1,26 @@
 # Calculator
 
-This is a simple calculator that I created using HTML, Bootstrap, and JavaScript. It allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. It features a clean and intuitive interface that makes it easy to use with a responsive design that works on desktop and mobile devices. I created this project as a way to improve my JavaScript skills and to learn more about building interactive web applications.
+A small, responsive calculator built with HTML, CSS, and JavaScript. It supports basic arithmetic, keyboard input, and light and dark appearance settings.
 
-![localhost_5500_dist_(iPad Mini)](https://user-images.githubusercontent.com/14801240/227727698-098e1bf6-dc98-40a8-b02c-f480937d06db.png)
+## Features
+
+- Addition, subtraction, multiplication, and division
+- Decimal input and a clear/backspace button
+- Keyboard support for numbers, operators, decimal points, Enter, and Backspace
+- Responsive keypad layout
+- Light and dark themes through the appearance panel
+
+## Run locally
+
+Install the project dependencies:
+
+```sh
+npm install
+```
+
+Serve the project directory with a local web server, then open `index.html` in your browser. For example, you can use the Live Server extension in VS Code. Serving over HTTP is needed for the JavaScript modules and local dependency imports.
+
+## Built with
+
+- HTML, CSS, and JavaScript modules
+- [Default Styles](https://github.com/jurgengjoncari/default-styles) for design tokens and appearance controls
