@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Segment7;
+    src: url(assets/Segment7Standard.otf);
+}
+
+@keyframes display-flicker {
+    0%, 59% { opacity: 0; }
+    60%, 100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #display [data-output-value].is-flickering {
+        animation-duration: 1ms;
+    }
+}
+
+#display {
+    font-family: Segment7, sans-serif;
+
+    grid-column: 1 / -1;
+
+    text-align: right;
+}
+
+#display [data-output-value].is-flickering {
+    animation: display-flicker 80ms steps(1, end);
+}

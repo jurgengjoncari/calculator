@@ -1,0 +1,9 @@
+@import "./display/style.css";
+@import "./numpad/style.css";
+
+form {
+    font-size: var(--font-size-lg);
+
+    display: grid;
+    gap: var(--size-sm);
+}
