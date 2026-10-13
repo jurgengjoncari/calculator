@@ -1,4 +1,4 @@
-@import "node_modules/@jurgengjoncari/default-styles/css/style.css";
+@import "@jurgengjoncari/default-styles/style.css";
 
 @font-face {
     font-family: Segment7;
@@ -47,8 +47,12 @@ output {
     width: fit-content;
     gap: var(--size-sm);
 
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(4, minmax(max-content, 1fr));
     grid-template-rows: repeat(5);
+}
+
+#numpad > button {
+    width: 100%;
 }
 
 #plus {
@@ -66,11 +70,26 @@ output {
 
 #zero {
     grid-column: span 2;
-    width: auto;
+    text-align: center;
 }
 
-#output {
+#display {
     font-family: Segment7, sans-serif;
+}
+
+@keyframes display-flicker {
+    0%, 59% { opacity: 0; }
+    60%, 100% { opacity: 1; }
+}
+
+#display [data-output-value].is-flickering {
+    animation: display-flicker 80ms steps(1, end);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #display [data-output-value].is-flickering {
+        animation-duration: 1ms;
+    }
 }
 
 a:link {

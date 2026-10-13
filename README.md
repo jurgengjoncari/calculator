@@ -18,7 +18,12 @@ Install the project dependencies:
 npm install
 ```
 
-Serve the project directory with a local web server, then open `index.html` in your browser. For example, you can use the Live Server extension in VS Code. Serving over HTTP is needed for the JavaScript modules and local dependency imports.
+Run the Vite development server:
+
+```sh
+npm run dev
+```
+To make and preview a production build, run `npm run build` and `npm run preview`. Vite bundles the app and its package imports into `dist` for deployment.
 
 ## Built with
 

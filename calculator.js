@@ -3,7 +3,7 @@ export default class Calculator {
         this.operator = undefined
         this.currentOperand = '0'
         this.previewsOperand = ''
-        this.output = document.querySelector('[data-output]')
+        this.output = document.querySelector('[data-output-value]')
     }
 
     delete() {
