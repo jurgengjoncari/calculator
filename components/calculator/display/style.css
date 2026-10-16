@@ -15,7 +15,7 @@
 }
 
 #display {
-    font-family: Segment7, sans-serif;
+    font-family: Segment7, monospace, sans-serif;
 
     grid-column: 1 / -1;
 
