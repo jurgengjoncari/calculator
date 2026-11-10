@@ -8,20 +8,14 @@
     60%, 100% { opacity: 1; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    #display [data-output-value].is-flickering {
-        animation-duration: 1ms;
-    }
-}
-
 #display {
     font-family: Segment7, monospace, sans-serif;
 
     grid-column: 1 / -1;
 
     text-align: right;
-}
 
-#display [data-output-value].is-flickering {
-    animation: display-flicker 80ms steps(1, end);
+    & [data-output-value].is-flickering {
+        animation: display-flicker 80ms steps(1, end);
+    }
 }
