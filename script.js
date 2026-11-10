@@ -2,7 +2,7 @@ if (["localhost", "127.0.0.1"].includes(location.hostname)) {
   import("@jurgengjoncari/default-styles/appearance-settings");
 }
 
-import Calculator from './calculator.js'
+import Calculator from './components/calculator/calculator.js'
 
 const calculator = new Calculator
 const output = document.querySelector('[data-output-value]')
@@ -21,7 +21,7 @@ const decimalButton = document.querySelector('[data-decimal]')
 
 digitButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        calculator.appendDigit(button.textContent)
+        calculator.appendDigit(button.dataset.digit)
         calculator.updateDisplay()
         flickerOutput()
     })
