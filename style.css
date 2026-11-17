@@ -19,7 +19,6 @@ main {
 }
 
 .surface {
-    background-color: var(--color-surface-fill);
     border-radius: var(--radius-surface);
     padding: var(--size-md);
 }
