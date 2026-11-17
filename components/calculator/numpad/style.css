@@ -1,5 +1,5 @@
 #numpad {
-    font-family: monospace;
+    font-family: var(--font-family-monospace);
 
     display: grid;
     width: fit-content;

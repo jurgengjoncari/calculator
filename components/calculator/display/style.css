@@ -9,7 +9,7 @@
 }
 
 #display {
-    font-family: Segment7, monospace, sans-serif;
+    font-family: var(--font-family-monospace);
 
     grid-column: 1 / -1;
 
