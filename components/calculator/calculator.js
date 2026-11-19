@@ -18,6 +18,13 @@ export default class Calculator {
         this.hasResult = false
     }
 
+    clear() {
+        this.operator = undefined
+        this.currentOperand = '0'
+        this.previousOperand = ''
+        this.hasResult = false
+    }
+
     appendDigit(digit) {
         if (this.hasResult) {
             this.currentOperand = digit

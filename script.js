@@ -16,7 +16,7 @@ function flickerOutput() {
 const digitButtons = document.querySelectorAll('[data-digit]')
 const operatorButtons = document.querySelectorAll('[data-operator]')
 const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.querySelector('[data-delete]')
+const clearButton = document.querySelector('[data-clear]')
 const decimalButton = document.querySelector('[data-decimal]')
 
 digitButtons.forEach((button) => {
@@ -46,8 +46,8 @@ equalsButton.addEventListener('click', () => {
     flickerOutput()
 })
 
-deleteButton.addEventListener('click', () => {
-    calculator.delete()
+clearButton.addEventListener('click', () => {
+    calculator.clear()
     calculator.updateDisplay()
     flickerOutput()
 })
